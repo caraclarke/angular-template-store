@@ -6,8 +6,18 @@ angular.module('templateStore.templates', ['ngRoute'])
       templateUrl: 'templates/templates.html',
       controller: 'TemplatesCtrl'
     })
+    .when('/templates/:templateId', {
+      templateUrl: 'templates/template_details.html',
+      controller: 'TemplateDetCtrl'
+    })
 }])
 
-.controller('TemplatesCtrl', ['$scope', function($scope) {
-  console.log($scope);
+.controller('TemplatesCtrl', ['$scope', '$http', function($scope, $http) {
+  $http.get('json/templates.json').success(function(res) {
+    $scope.templates = res;
+  });
+}])
+
+.controller('TemplateDetCtrl', ['$scope', '$http', function($scope, $http) {
+
 }]);
