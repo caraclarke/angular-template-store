@@ -42,3 +42,11 @@
   text-align: center;
   margin: auto;
 }
+
+.templates .col-md-4 {
+  margin-bottom: 20px;
+}
+
+.full-width-img {
+  width: 100%;
+}
