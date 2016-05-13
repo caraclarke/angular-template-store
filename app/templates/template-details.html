@@ -4,6 +4,14 @@
 
   <div class="col-md-4">
     <img class="full-width-img" ng-src="img/{{mainImage}}">
+
+    <div class="row">
+      <div ng-repeat="image in template.images | limitTo:4">
+        <div class="col-md-3">
+          <img class="full-width-img" ng-src="img/{{image.name}}" ng-click="setImage(image)">
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="col-md-8">
@@ -35,6 +43,6 @@
 
         <!-- Button -->
         <input type="image" src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_buynow_107x26.png" name="submit" alt="Buy Now">
-    </form> 
+    </form>
   </div>
 </div>
